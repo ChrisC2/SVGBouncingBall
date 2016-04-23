@@ -1,6 +1,6 @@
 {
-  "firebase": "SVGAnimation",
-  "public": "public",
+  "firebase": "svganimation",
+  "public": "src",
   "ignore": [
     "firebase.json",
     "**/.*",

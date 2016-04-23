@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/paper/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <title>SVG Ball Animation</title>
+  </head>
+  <body>
+    <div class="text-center">
+      <h1>SVG Bouncing Ball</h1>
+    <p class="text-success">Drag the Ball to Throw!</p>
+    </div>
+    <div class="container">
+      <div class="form-container">
+        <form class="form-horizontal">
+          <fieldset>
+            <h3>Controls</h3>
+            <div class="form-group">
+              <label for="ball-size" class="col-xs-3 control-label">Ball Size:</label>
+              <div class="col-xs-3">
+                <input type="text" class="form-control" id="ball-size" value="50">
+              </div>
+            </div>
+            <div class="form-group left">
+              <label for="ball-speed" class="col-xs-3 control-label">Speed:</label>
+              <div class="col-xs-3">
+                <input type="text" class="form-control" id="ball-speed" value="1.0">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="gravity" class="col-xs-3 control-label">Gravity:</label>
+              <div class="col-xs-3">
+                <input type="text" class="form-control" id="gravity" value="0.5">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="friction" class="col-xs-3 control-label">Friction:</label>
+              <div class="col-xs-3">
+                <input type="text" class="form-control" id="friction" value="0.9">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="bounce" class="col-xs-3 control-label">Bounce:</label>
+              <div class="col-xs-3">
+                <input type="text" class="form-control" id="bounce" value="0.7">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-8">
+                <a href="#" id="resume" class="btn btn-info">Resume</a>
+                <a href="#" id="pause" class="btn btn-warning">Pause</a>
+                <a href="#" id="reset" class="btn btn-success">Reset</a>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-10">
+                <button id="save" class="btn btn-primary">Save Settings</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div id="box"></div>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="bower_components/svg.js/dist/svg.js"></script>
+  <script src="bower_components/svg.draggable.js/dist/svg.draggable.js"></script>
+  <script src="app.js"></script>
+</html>
