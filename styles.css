@@ -1,0 +1,31 @@
+body {
+  background-color: grey;
+}
+.container {
+  margin: 0 auto;
+}
+.form-container {
+  width: 40%;
+  height: 50%;
+  float: left;
+}
+label {
+  text-align: left !important;
+}
+#box {
+  float: left;
+  width: 50%;
+  height: 50%;
+  margin: 20px auto;
+  border-style: dotted;;
+  border-width: 2px;
+  border-color: #2196f3;
+  background-color: white;
+}
+svg {
+  border-color: black;
+  border-width: 2px;
+  float: left;
+  margin: 0 auto;
+	background-color: white;
+}

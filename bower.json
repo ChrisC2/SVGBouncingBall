@@ -1,0 +1,23 @@
+{
+  "name": "SVGAnimation",
+  "authors": [
+    "ChrisC2 <chrisjc790@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "svg.draggable.js": "~2.1.3",
+    "svg.js": "~2.3.0"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "firebase": "SVGAnimation",
+  "public": "public",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
