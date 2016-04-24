@@ -31,7 +31,7 @@ $(function(){
   ball.draggable();
 
   //Add listener for when drag starts
-  ball.on('dragstart', function(event) {
+  ball.on('dragstart', function() {
     dragging = true;
     cancelAnimationFrame(r_id);
     r_id = null;
@@ -44,7 +44,7 @@ $(function(){
   }, false)
 
   //Add listener during drag
-  ball.on('dragmove', function(event) {
+  ball.on('dragmove', function() {
     oldPos.x = currPos.x;
     oldPos.y = currPos.y;
     currPos.x = this.attr('cx');
