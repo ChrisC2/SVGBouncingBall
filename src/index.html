@@ -5,47 +5,50 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <link href="styles.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/paper/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     <title>SVG Ball Animation</title>
   </head>
   <body>
-    <div class="text-center">
-      <h1>SVG Bouncing Ball</h1>
-    <p class="text-success">Drag the Ball to Throw!</p>
-    </div>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">SVG Bouncing Ball</a>
+        </div>
+      </div>
+    </nav>
     <div class="container">
       <div class="form-container">
         <form class="form-horizontal">
           <fieldset>
             <h4>Controls</h4>
+            <p class="text-success">Drag the Ball to Throw!</p>
             <hr>
             <div class="form-group">
               <label for="ball-size" class="col-xs-3 control-label">Ball Size:</label>
-              <div class="col-xs-3">
+              <div class="col-xs-4">
                 <input type="text" class="form-control" id="ball-size" value="50">
               </div>
             </div>
             <div class="form-group left">
               <label for="ball-speed" class="col-xs-3 control-label">Speed:</label>
-              <div class="col-xs-3">
+              <div class="col-xs-4">
                 <input type="text" class="form-control" id="ball-speed" value="1.0">
               </div>
             </div>
             <div class="form-group">
               <label for="gravity" class="col-xs-3 control-label">Gravity:</label>
-              <div class="col-xs-3">
+              <div class="col-xs-4">
                 <input type="text" class="form-control" id="gravity" value="0.5">
               </div>
             </div>
             <div class="form-group">
               <label for="friction" class="col-xs-3 control-label">Friction:</label>
-              <div class="col-xs-3">
+              <div class="col-xs-4">
                 <input type="text" class="form-control" id="friction" value="0.9">
               </div>
             </div>
             <div class="form-group">
               <label for="bounce" class="col-xs-3 control-label">Rebound:</label>
-              <div class="col-xs-3">
+              <div class="col-xs-4">
                 <input type="text" class="form-control" id="bounce" value="0.7">
               </div>
             </div>

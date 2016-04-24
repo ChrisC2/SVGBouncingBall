@@ -13,6 +13,13 @@ hr {
   margin: 0;
   width: 60%
 }
+.navbar-brand {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
 #box {
   float: left;
   width: 50%;
@@ -28,7 +35,7 @@ svg {
 	background-color: white;
   border-style: dotted;
   border-width: 2px;
-  border-color: #2196f3;
+  border-color: #862197;
   background-color: white;
 }
 #save-message {
@@ -37,12 +44,9 @@ svg {
   opacity: 0;
 }
 
-@media(max-width: 580px){
+@media(max-width: 610px){
   body {
     font-size: 12px !important;
-  }
-  h1 {
-    font-size: 20px !important;
   }
   h4 {
     font-size: 15px !important
@@ -56,7 +60,7 @@ svg {
     float: none;
     margin: 0 auto;
     width: 100%;
-    height: 100%;
+    height: 80%;
   }
   .form-group {
     clear: none !important;
