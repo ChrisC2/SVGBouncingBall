@@ -135,9 +135,9 @@ $('#save').on('click',function (e){
   $('#save-message').animate({
     opacity: 1
   }, 1000)
-  $('#save-message').animate({
+  $('#save-message').delay(2000).animate({
     opacity: 0
-  }, 3000)
+  }, 2000)
   e.preventDefault();
 });
 
