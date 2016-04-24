@@ -30,6 +30,12 @@ svg {
 	background-color: white;
 }
 
+#save-message {
+  padding: 5px;
+  color: #439a46;
+  opacity: 0
+}
+
 @media(max-width: 580px){
   .form-container {
     text-align: center !important;
@@ -41,16 +47,13 @@ svg {
   .form-group {
     clear: none !important;
   }
-
   #box {
     width: 100%;
     float: none;
     margin: 0 auto;
   }
-
   svg {
     height: 100%;
     float: none;
   }
-
 }

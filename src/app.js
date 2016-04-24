@@ -17,7 +17,6 @@ $(function(){
   var cy = ball.cy(); //center y
   var vel = {x: 10, y: 5}; //directional velocity properties
   var radius = ball.attr('r');
-  console.log('this is radius', radius)
   var speedRatio = 1;
 
   //Ball Position
@@ -133,6 +132,12 @@ var reset = function () {
 //Save Button Click
 $('#save').on('click',function (e){
   saveSettings();
+  $('#save-message').animate({
+    opacity: 1
+  }, 1000)
+  $('#save-message').animate({
+    opacity: 0
+  }, 3000)
   e.preventDefault();
 });
 
