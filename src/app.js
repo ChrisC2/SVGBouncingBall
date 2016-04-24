@@ -99,22 +99,36 @@ $(function(){
     };
   };
 
+  //Initialize Ball Animation
   r_id = requestAnimationFrame(moveBall);
 
-  //Update Settings
-  var saveSettings = function() {
-    //Change Ball Size
-    var newSize = parseFloat($('#ball-size').val()) / 2;
-    ball = ball.radius(newSize);
+  //Save Settings
+  var saveSettings = function(size, speed, g, f, b) {
+    ball = ball.radius(size);
     radius = ball.attr('r');
-    //Change Ball Speed
-    speedRatio = parseFloat($('#ball-speed').val());
-    //Change Gravity
-    gravity = parseFloat($('#gravity').val());
-    //Change Friction
-    friction = parseFloat($('#friction').val());
-    //Change Bounce Ratio
-    bounceRatio = parseFloat($('#bounce').val());
+    speedRatio = speed;
+    gravity = g;
+    friction = f;
+    bounceRatio = b;
+  }
+
+  //(Returns Boolean) Validate That Settings are Numbers
+  var validateSettings = function() {
+    var validate = {
+      size: Number($('#ball-size').val()) / 2,
+      speed: Number($('#ball-speed').val()),
+      grav: Number($('#gravity').val()),
+      fric: Number($('#friction').val()),
+      rebound: Number($('#bounce').val())
+    };
+    for(var setting in validate) {
+      if(isNaN(validate[setting]) === true) {
+        return false;
+      }
+    }
+    //Save Settings
+    saveSettings(validate.size, validate.speed, validate.grav, validate.fric, validate.rebound);
+    return true;
   };
 
   //Reset to Initial State
@@ -124,7 +138,7 @@ $(function(){
       r_id = requestAnimationFrame(moveBall);
     };
     $('form')[0].reset();
-    saveSettings();
+    validateSettings();
     vel = {x: 10, y: 5};
     oldPos = {x: 25, y: 25};
     currPos= {x: 25, y: 25};
@@ -132,13 +146,34 @@ $(function(){
 
   //Save Button Click
   $('#save').on('click', function(e) {
-    saveSettings();
-    $('#save-message').animate({
-      opacity: 1
-    }, 1000);
-    $('#save-message').delay(2000).animate({
-      opacity: 0
-    }, 1000);
+    var validated = validateSettings();
+    if(validated){
+      //Fade In Saved Message
+      $('#save-message')
+      .text('Settings Saved!')
+      .css('color', '#439a46')
+      .animate({
+        opacity: 1
+      }, 1000);
+      //Fade Out
+      $('#save-message')
+      .delay(2000)
+      .animate({
+        opacity: 0
+      }, 1000);
+    } else {
+      //Fade In Error Message
+      $('#save-message')
+        .text('Not Saved. You Must Enter Numbers')
+        .css('color', 'tomato')
+        .animate({
+          opacity: 1
+        }, 1000);
+      //Fade Out
+      $('#save-message').delay(2000).animate({
+        opacity: 0
+      }, 1000)
+    }
     e.preventDefault();
   });
 

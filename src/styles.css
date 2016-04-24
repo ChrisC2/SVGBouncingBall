@@ -40,7 +40,6 @@ svg {
 }
 #save-message {
   padding: 5px;
-  color: #439a46;
   opacity: 0;
 }
 
@@ -63,7 +62,8 @@ svg {
     height: 80%;
   }
   .form-group {
-    clear: none !important;
+
+    text-align:center;
   }
   #box {
     width: 100%;
