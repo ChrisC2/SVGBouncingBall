@@ -31,20 +31,20 @@ $(function(){
   ball.draggable();
 
   //Add listener for when drag starts
-  ball.on('dragstart', function (event) {
+  ball.on('dragstart', function(event) {
     dragging = true;
     cancelAnimationFrame(r_id);
     r_id = null;
   }, false)
 
   //Add listener for when drag ends
-  ball.on('dragend', function () {
+  ball.on('dragend', function() {
     dragging = false;
     moveBall();
   }, false)
 
   //Add listener during drag
-  ball.on('dragmove', function (event) {
+  ball.on('dragmove', function(event) {
     oldPos.x = currPos.x;
     oldPos.y = currPos.y;
     currPos.x = this.attr('cx');
@@ -54,7 +54,7 @@ $(function(){
   }, false)
 
   //Keeps Ball in Bounds
-  var checkBounds = function () {
+  var checkBounds = function() {
     //right boundary
     if(currPos.x + radius > boundary.width) {
       currPos.x = boundary.width - radius;
@@ -79,7 +79,7 @@ $(function(){
   };
 
   //Update Ball Position
-  var updatePosition = function(x,y){
+  var updatePosition = function(x,y) {
     ball.cx(x);
     ball.cy(y);
   };
@@ -102,7 +102,7 @@ $(function(){
   r_id = requestAnimationFrame(moveBall);
 
   //Update Settings
-  var saveSettings = function(){
+  var saveSettings = function() {
     //Change Ball Size
     var newSize = parseFloat($('#ball-size').val()) / 2;
     ball = ball.radius(newSize);
@@ -118,7 +118,7 @@ $(function(){
   };
 
   //Reset to Initial State
-  var reset = function () {
+  var reset = function() {
     if(paused){
       paused = false;
       r_id = requestAnimationFrame(moveBall);
@@ -131,26 +131,26 @@ $(function(){
   };
 
   //Save Button Click
-  $('#save').on('click',function (e){
+  $('#save').on('click', function(e) {
     saveSettings();
     $('#save-message').animate({
       opacity: 1
-    }, 1000)
+    }, 1000);
     $('#save-message').delay(2000).animate({
       opacity: 0
-    }, 1000)
+    }, 1000);
     e.preventDefault();
   });
 
   //Pause Button Click
-  $('#pause').on('click', function (e){
+  $('#pause').on('click', function(e) {
     paused = true;
     cancelAnimationFrame(r_id);
     r_id = null;
   });
 
   //Resume Button Click
-  $('#resume').on('click', function (e){
+  $('#resume').on('click', function(e) {
     r_id = requestAnimationFrame(moveBall);
   });
 
