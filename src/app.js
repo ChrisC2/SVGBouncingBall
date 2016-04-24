@@ -35,13 +35,13 @@ $(function(){
     dragging = true;
     cancelAnimationFrame(r_id);
     r_id = null;
-  }, false)
+  }, false);
 
   //Add listener for when drag ends
   ball.on('dragend', function() {
     dragging = false;
     moveBall();
-  }, false)
+  }, false);
 
   //Add listener during drag
   ball.on('dragmove', function() {
@@ -143,14 +143,14 @@ $(function(){
   });
 
   //Pause Button Click
-  $('#pause').on('click', function(e) {
+  $('#pause').on('click', function() {
     paused = true;
     cancelAnimationFrame(r_id);
     r_id = null;
   });
 
   //Resume Button Click
-  $('#resume').on('click', function(e) {
+  $('#resume').on('click', function() {
     r_id = requestAnimationFrame(moveBall);
   });
 
