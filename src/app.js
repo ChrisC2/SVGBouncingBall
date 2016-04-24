@@ -101,58 +101,60 @@ $(function(){
 
   r_id = requestAnimationFrame(moveBall);
 
-//Update Settings
-var saveSettings = function(){
-  var newSize = parseFloat($('#ball-size').val()) / 2;
-  ball = ball.radius(newSize);
-  radius = ball.attr('r');
-  //Change Ball Speed
-  speedRatio = parseFloat($('#ball-speed').val());
-  //Change Gravity
-  gravity = parseFloat($('#gravity').val());
-  //Change Friction
-  friction = parseFloat($('#friction').val());
-  //Change Bounce Ratio
-  bounceRatio = parseFloat($('#bounce').val());
-};
-
-//Reset to Initial State
-var reset = function () {
-  if(paused){
-    paused = false;
-    r_id = requestAnimationFrame(moveBall);
+  //Update Settings
+  var saveSettings = function(){
+    //Change Ball Size
+    var newSize = parseFloat($('#ball-size').val()) / 2;
+    ball = ball.radius(newSize);
+    radius = ball.attr('r');
+    //Change Ball Speed
+    speedRatio = parseFloat($('#ball-speed').val());
+    //Change Gravity
+    gravity = parseFloat($('#gravity').val());
+    //Change Friction
+    friction = parseFloat($('#friction').val());
+    //Change Bounce Ratio
+    bounceRatio = parseFloat($('#bounce').val());
   };
-  $('form')[0].reset();
-  saveSettings();
-  vel = {x: 10, y: 5};
-  oldPos = {x: 25, y: 25};
-  currPos= {x: 25, y: 25};
-};
 
-//Save Button Click
-$('#save').on('click',function (e){
-  saveSettings();
-  $('#save-message').animate({
-    opacity: 1
-  }, 1000)
-  $('#save-message').delay(2000).animate({
-    opacity: 0
-  }, 2000)
-  e.preventDefault();
-});
+  //Reset to Initial State
+  var reset = function () {
+    if(paused){
+      paused = false;
+      r_id = requestAnimationFrame(moveBall);
+    };
+    $('form')[0].reset();
+    saveSettings();
+    vel = {x: 10, y: 5};
+    oldPos = {x: 25, y: 25};
+    currPos= {x: 25, y: 25};
+  };
 
-//Pause Button Click
-$('#pause').on('click', function (e){
-  paused = true;
-  cancelAnimationFrame(r_id);
-  r_id = null;
-});
+  //Save Button Click
+  $('#save').on('click',function (e){
+    saveSettings();
+    $('#save-message').animate({
+      opacity: 1
+    }, 1000)
+    $('#save-message').delay(2000).animate({
+      opacity: 0
+    }, 1000)
+    e.preventDefault();
+  });
 
-//Resume Button Click
-$('#resume').on('click', function (e){
-  r_id = requestAnimationFrame(moveBall);
-});
+  //Pause Button Click
+  $('#pause').on('click', function (e){
+    paused = true;
+    cancelAnimationFrame(r_id);
+    r_id = null;
+  });
 
-$('#reset').on('click', reset);
+  //Resume Button Click
+  $('#resume').on('click', function (e){
+    r_id = requestAnimationFrame(moveBall);
+  });
+
+  //Reset Button Click
+  $('#reset').on('click', reset);
 
 });

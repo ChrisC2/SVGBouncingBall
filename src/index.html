@@ -17,7 +17,8 @@
       <div class="form-container">
         <form class="form-horizontal">
           <fieldset>
-            <h3>Controls</h3>
+            <h4>Controls</h4>
+            <hr>
             <div class="form-group">
               <label for="ball-size" class="col-xs-3 control-label">Ball Size:</label>
               <div class="col-xs-3">
@@ -43,21 +44,21 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="bounce" class="col-xs-3 control-label">Bounce:</label>
+              <label for="bounce" class="col-xs-3 control-label">Rebound:</label>
               <div class="col-xs-3">
                 <input type="text" class="form-control" id="bounce" value="0.7">
               </div>
             </div>
             <div class="form-group">
               <div class="col-lg-8">
-                <a href="#" id="resume" class="btn btn-info">Resume</a>
-                <a href="#" id="pause" class="btn btn-warning">Pause</a>
-                <a href="#" id="reset" class="btn btn-success">Reset</a>
+                <a id="resume" class="btn btn-info">Resume</a>
+                <a id="pause" class="btn btn-warning">Pause</a>
+                <a id="reset" class="btn btn-success">Reset</a>
               </div>
             </div>
             <div class="form-group">
               <div class="col-lg-10">
-                <button id="save" class="btn btn-primary">Save Settings</button>
+                <input id="save" class="btn btn-primary" value="Save Settings">
                 <div id="save-message">Settings Saved!</div>
               </div>
             </div>
